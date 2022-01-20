@@ -15,7 +15,7 @@ class CreateTransactionHeadersTable extends Migration
     {
         Schema::create('transaction_headers', function (Blueprint $table) {
             $table->id();
-            $table->string('code');
+            $table->string('doc_code');
             $table->string('number');
             $table->string('user');
             $table->integer('total');

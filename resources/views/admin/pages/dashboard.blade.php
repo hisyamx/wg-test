@@ -71,7 +71,7 @@
                         Tambah product
                     </span>
                 </a>
-                <a href="{{ route('admin.report.create') }}"
+                <a href="{{ route('admin.report') }}"
                     class="inline-flex flex-col items-center justify-center w-auto px-3 py-3 border border-blue-100 rounded-xl hover:bg-blue-50">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-500" viewBox="0 0 20 20"
                         fill="currentColor">
@@ -81,7 +81,7 @@
                         <path d="M15 7h1a2 2 0 012 2v5.5a1.5 1.5 0 01-3 0V7z" />
                     </svg>
                     <span class="text-gray-900 opacity-70 text-center mt-2">
-                        Tambah report
+                        Report Penjualana
                     </span>
                 </a>
             </nav>

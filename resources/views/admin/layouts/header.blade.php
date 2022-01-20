@@ -41,7 +41,7 @@
             class="absolute left-0 flex-col items-center justify-center w-full space-y-4 md:flex xl:w-auto xl:flex-row xl:justify-start xl:space-y-0 xl:space-x-4xl:left-8 bottom-6">
             <div class="flex flex-col items-center text-sm xl:items-start px-4">
                 <div class="space-y-4 text-sm text-center text-gray-300 md:space-y-1 md:text-center">
-                    <p>&copy; {{ date('Y') }} - Dinkes Melawi & Melawi Software Production | All rights reserved</p>
+                    <p>&copy; {{ date('Y') }} - Wings Group Test</p>
                 </div>
             </div>
         </div>

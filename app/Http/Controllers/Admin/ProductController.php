@@ -3,29 +3,28 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Product;
 use Illuminate\Http\Request;
+use App\Models\Product;
+use Carbon\Carbon;
+use Illuminate\Support\Str;
 
 class ProductController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        $product = Product::all();
+        return view('admin.product.index', compact('product'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return view('admin.product.create');
+    }
+
+    public function edit($id)
+    {
+        $product = Product::findOrFail($id);
+        return view('admin.product.edit', compact('product'));
     }
 
     /**
@@ -36,51 +35,56 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'pro_code' => 'required',
+            'name' => 'required',
+            'price' => 'required',
+        ]);
+
+        $product = new product();
+        $product->pro_code = $request->pro_code;
+        $product->name = $request->name;
+        $product->price = $request->price;
+        $product->meta_desc = $request->meta_desc;
+
+        if ($product->save()) {
+            return redirect(route('admin.product'))->with('success', "product Berhasil Ditambahkan");
+        }
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Product  $product
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Product $product)
+
+    public function show($id)
     {
-        //
+        $product = Product::findOrFail($id);
+        return view('admin.product.show', compact('product'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Product  $product
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Product $product)
+    public function destroy($id)
     {
-        //
+        $product = Product::findOrFail($id);
+        $product->delete();
+
+        return redirect(route('admin.product'))->with("success-del", "product Berhasil Dihapus");
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Product  $product
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Product $product)
+    public function update_record(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'pro_code' => 'required',
+            'name' => 'required',
+            'price' => 'nullable',
+            'meta_desc' => 'nullable',
+        ]);
+
+        $product = Product::findOrFail($id);
+        $product->pro_code = $request->pro_code;
+        $product->name = $request->name;
+        $product->price = $request->price;
+        $product->meta_desc = $request->meta_desc;
+        $product->save(); //this will UPDATE the record
+
+        return redirect(route('admin.product'))->with("success", "product Berhasil Diperbaharui");
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Product  $product
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Product $product)
-    {
-        //
-    }
+
 }

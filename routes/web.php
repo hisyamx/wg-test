@@ -43,14 +43,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:sanctum','verified'], f
 
     Route::prefix('report')->group(function() {
         Route::get("", [Admin\ReportController::class, 'index'])->name('admin.report');
-        Route::get("/create", [Admin\ReportController::class, 'create'])->name('admin.report.create');
-        Route::get("/edit/{id}", [Admin\ReportController::class, 'edit'])->name('admin.report.edit');
-        Route::get("/show/{id}", [Admin\ReportController::class, 'show'])->name('admin.report.show');
-        //Post Requests
-        Route::post("/create", [Admin\ReportController::class, 'store']);
-        Route::post("/edit/{id}", [Admin\ReportController::class, 'update_record'])->name('admin.report.edit');
-        // Delete Request
-        Route::delete("/delete/{id}", [Admin\ReportController::class, 'destroy'])->name('admin.report.delete');
     });
 
 });

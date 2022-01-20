@@ -9,7 +9,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
 
-                        <!-- quick actions -->
+        <!-- quick actions -->
         <div
             class="flex flex-col px-4 py-4 mt-8 space-y-4 bg-white rounded-2xl lg:px-8 lg:py-6 lg:flex-row lg:space-y-0 lg:space-x-12">
             <div>
