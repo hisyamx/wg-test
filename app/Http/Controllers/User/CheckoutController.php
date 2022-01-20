@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\User;
 
-use App\Models\TransactionHeader;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class TransactionHeaderController extends Controller
+class DashboardController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class TransactionHeaderController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\TransactionHeader  $transactionHeader
+     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(TransactionHeader $transactionHeader)
+    public function show(Product $product)
     {
         //
     }
@@ -52,10 +52,10 @@ class TransactionHeaderController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\TransactionHeader  $transactionHeader
+     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(TransactionHeader $transactionHeader)
+    public function edit(Product $product)
     {
         //
     }
@@ -64,10 +64,10 @@ class TransactionHeaderController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\TransactionHeader  $transactionHeader
+     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, TransactionHeader $transactionHeader)
+    public function update(Request $request, Product $product)
     {
         //
     }
@@ -75,10 +75,10 @@ class TransactionHeaderController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\TransactionHeader  $transactionHeader
+     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(TransactionHeader $transactionHeader)
+    public function destroy(Product $product)
     {
         //
     }

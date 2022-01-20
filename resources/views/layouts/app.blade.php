@@ -42,5 +42,8 @@
         @stack('modals')
 
         @livewireScripts
+        <script>
+            <script src="../path/to/@themesberg/flowbite/dist/flowbite.bundle.js"></script>
+        </script>
     </body>
 </html>
